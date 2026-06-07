@@ -12,6 +12,9 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import pages_DataDrivenTestingFramework.Checkout;
 import pages_DataDrivenTestingFramework.Dashboard;
 import pages_DataDrivenTestingFramework.Login;
@@ -34,11 +37,11 @@ public class BaseClass {
 		if(browsername.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions op = new ChromeOptions();
-			op.setBinary("C:\\Users\\Sreya Basu\\Downloads\\chrome-win64\\chrome.exe");
+			//op.setBinary("C:\\Users\\Sreya Basu\\Downloads\\chrome-win64\\chrome.exe");
 			op.addArguments("--incognito");
 			w = new ChromeDriver(op);
 		}
-		
+		 
 		else
 		{
 			EdgeOptions eo = new EdgeOptions();
@@ -57,6 +60,15 @@ public class BaseClass {
 	
 	//Adding changes for git by person A
 	//Adding changes for git by person B
+	
+	public ExtentReports extentreportobj()
+	{
+		ExtentSparkReporter reporter = new ExtentSparkReporter("target/TestReport.html");
+		ExtentReports extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		return extent;
+	}
+	
 	@AfterTest
 	public void end()
 	{

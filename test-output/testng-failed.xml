@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="testpackage_DataDrivenTestingFramework.Listen"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="LoginTest(failed)">
+  <test thread-count="5" parallel="tests" name="Login(failed)">
     <classes>
       <class name="testpackage_DataDrivenTestingFramework.LoginTest">
         <methods>
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- testpackage_DataDrivenTestingFramework.LoginTest -->
     </classes>
-  </test> <!-- LoginTest(failed) -->
+  </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->

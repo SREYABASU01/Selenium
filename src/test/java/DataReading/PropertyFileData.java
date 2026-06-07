@@ -59,6 +59,7 @@ public class PropertyFileData {
 		String acturl= driver.getCurrentUrl();
 		SoftAssert sa = new SoftAssert();
 		sa.assertEquals(acturl, expurl);
+		sa.assertAll();//Collects all the results at the end.
 	}
 	
 	@AfterMethod
